@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <style>
+        .custom-card {
+            width: 75%;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            height: 75%;
+        }
+
+        .custom-card img {
+            max-width: 100%;
+            max-height: 20%;
+        }
+
+        .custom-card p {
+            font-size: 16px;
+        }
+        .custom-card:hover {
+            transform: scaleY(1.1);
+            max-height: 40%;
+        }
+
+        .custom-card:hover img {
+            content: url('task4.1.jpeg');
+        }
+
+
+        .custom-td {
+            width: 25%;
+            height: 75%;
+        }
+
+        .text-overlay {
+            text-align: left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            font-size: 40px;
+        }
+
+        .container {
+            padding: 2px;
+            margin-top: 20px;
+        }
+
+        .card-links {
+            font-size: 18px;
+            color: var(--bs-yellow);
+            text-decoration: none;
+        }
+
+        .card-links::after {
+            content: " | ";
+            color: #fff;
+        }
+
+        .empty-space {
+            height: 250px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table style="width: 100%;">
+            <tr>
+                <td class="custom-td ">
+                    <div class="card custom-card">
+                        <div class="text-overlay">MATERIAL CARDS</div>
+                        <img class="" src="task4.2.jpeg" alt="Image 1">
+                        <div class="card-body">
+                            <p class="card-text">Cards for display in <br> Portfolio Style <br> material design by google.</p>
+                            <a href="#" class="card-links">LINK</a>
+                           <a href="#" class="card-links">LINK</a>
+                            <div class="empty-space"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="custom-td">
+                    <div class="card custom-card">
+                        <div class="text-overlay">MATERIAL CARDS</div>
+                        <img src="task4.2.jpeg" alt="Image 2">
+                        <div class="card-body">
+                            <p class="card-text">Cards for display in <br> Portfolio Style <br> material design by google.</p>
+                            <a href="#" class="card-links">LINK</a><a href="#" class="card-links">LINK</a>
+                            <div class="empty-space"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="custom-td">
+                    <div class="card custom-card">
+                        <div class="text-overlay">MATERIAL CARDS</div>
+                        <img src="task4.2.jpeg" alt="Image 3">
+                        <div class="card-body">
+                            <p class="card-text">Cards for display in <br> Portfolio Style <br> material design by google.</p>
+                            <a href="#" class="card-links">LINK</a><a href="#" class="card-links">LINK</a>
+                            <div class="empty-space"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="custom-td">
+                    <div class="card custom-card">
+                        <div class="text-overlay">MATERIAL CARDS</div>
+                        <img src="task4.2.jpeg" alt="Image 4">
+                        <div class="card-body">
+                            <p class="card-text">Cards for display in <br> Portfolio Style <br> material design by google.</p>
+                            <a href="#" class="card-links">LINK</a><a href="#" class="card-links">LINK</a>
+                            <div class="empty-space"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

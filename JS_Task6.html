@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Instagram Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      
+    }
+
+    .login-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .icon-prepend {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      background-color: #f0f0f0;
+      border-radius: 5px 0 0 5px;
+      height: 100%;
+    }
+
+    .icon-prepend i {
+      font-size: 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #3897f0;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .checkbox-group {
+      text-align: left;
+      margin-top: 12px;
+      position: absolute;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .forgot-pass{
+      text-align: right;
+      position: relative;
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container shadow">
+    <div class ="login-box">
+      <img class="logo" src="insta.png" alt="Instagram Logo">
+      
+      <div class="input-group">
+        <div class="icon-prepend">
+          <i class="fas fa-user"></i>
+        </div>
+        <input type="text" placeholder="Username">
+      </div>
+
+      <div class="input-group">
+        <div class="icon-prepend">
+          <i class="fas fa-lock"></i>
+        </div>
+        <input type="password" placeholder="Password">
+      </div>
+
+      <button class="login-btn" onclick="login()">Log in</button>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="rememberMe">
+        <label>Remember me</label>  
+      </div>
+      <div class="forgot-pass">
+        <a href="#">Forgot password?</a> 
+      </div>
+      
+    </div>
+    <div class="signup-link">
+      Don't have an account? <a href="#">Sign up here</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      alert("Logging in...");
+    }
+  </script>
+</body>
+</html>

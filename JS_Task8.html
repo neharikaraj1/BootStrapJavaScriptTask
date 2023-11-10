@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+
+      body {
+        background-color: white;
+      }
+      .cont{
+        background: linear-gradient(to bottom, #f5f5a1 0%, #fb81cc 100%);
+        width: max-content;
+        padding: 20px;
+      }
+      .reg{
+        border-radius: 60px; 
+        background-color: red; 
+        color: #fff; 
+        padding: 10px 20px; 
+        border: none; 
+        cursor: pointer;
+        border: 1px black solid;
+      }
+    </style>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <center>
+      <div class="cont">
+      <h1 style="color: blue">Registration Form</h1>
+      <form name="myform" action="#" onsubmit="return validate()">
+        <table style="border: 0">
+          <tbody>
+            <tr>
+              <td style="text-align: right">
+                <label for="fname"><b>First Name</b></label>
+              </td>
+              <td><input type="text" size="59" name="name" id="name" /></td>
+              <td><span id="f1"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Last Name</b></label>
+              </td>
+              <td><input name="lname" id="lname" type="text" size="59" /></td>
+              <td><span id="f2"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Email</b></label>
+              </td>
+              <td><input type="email" name="email" id="email" size="59" /></td>
+              <td><span id="f3"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Password</b></label>
+              </td>
+              <td>
+                <input
+                  name="password"
+                  id="password"
+                  type="password"
+                  size="59"
+                  oninput="checkPasswordStrength()"
+                />
+              </td>
+              <td><span id="f4"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Re-enter Password</b></label>
+              </td>
+              <td>
+                <input
+                  id="rpassword"
+                  name="rpassword"
+                  type="password"
+                  size="59"
+                  oninput="checkPasswordMatch()"
+                />
+              </td>
+              <td><span id="f5"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Gender</b></label>
+              </td>
+              <td>
+                <input type="radio" name="gender" value="male" id="male" />
+                <label for="male">Male</label></br>
+                <input type="radio" name="gender" value="female" id="female" />
+                <label for="female">Female</label>
+              </td>
+              <td><span id="f6"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Age</b></label>
+              </td>
+              <td><input id="age" name="age" size="59" /></td>
+              <td><span id="f7"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Phone Number</b></label>
+              </td>
+              <td><input id="phone" name="phone" size="59" /></td>
+              <td><span id="f8"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Address</b></label>
+              </td>
+              <td>
+                <textarea
+                  cols="56"
+                  rows="6"
+                  id="address"
+                  name="address"
+                ></textarea>
+              </td>
+              <td><span id="f9"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>State</b></label>
+              </td>
+              <td><input id="state" name="state" type="text" size="59" /></td>
+              <td><span id="f10"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: right">
+                <label for=""><b>Country</b></label>
+              </td>
+              <td>
+                <select name="country" id="country">
+                  <option value="Choose your country">Choose your country</option>
+                  <option value="India">India</option>
+                </select>
+              </td>
+              <td><span id="f11"></span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center">
+                <label for=""><b>Languages known</b></label>
+              </td>
+              <td>
+                <input type="checkbox" id="l1" name="l1" value="English" />
+                <label for="l1">English</label>
+                <input type="checkbox" id="l2" name="l2" value="Tamil" />
+                <label for="l2">Tamil</label>
+                <input type="checkbox" id="l3" name="l3" value="Hindi" />
+                <label for="l3">Hindi</label>
+                <input type="checkbox" id="l4" name="l4" value="Telugu" />
+                <label for="l4">Telugu</label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="10">
+                <input
+                  type="checkbox"
+                  value="clicked"
+                  name="terms"
+                  id="terms"
+                />
+                <label value="hereby">Hereby I declare all the given details are true</label>
+              </td>
+              <td><span id="f12"></span></td>
+            </tr>
+            <tr>
+              <td colspan="10" id="xyz" style="text-align: right">
+                Log in to <a href="">Ethnus</a> website
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <button class="reg" type="submit">REGISTER</button>
+      </form>
+    </div>
+    </center>
+  </body>
+ 
+
+  <script>
+    function validate() {
+      let errors = false;
+
+      // Reset error messages
+      for (let i = 1; i <= 12; i++) {
+        document.getElementById("f" + i).innerHTML = "";
+      }
+
+      // Validation logic for each field
+      if (document.forms["myform"]["name"].value === "") {
+        showError("f1", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["lname"].value === "") {
+        showError("f2", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["email"].value === "") {
+        showError("f3", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["password"].value === "") {
+        showError("f4", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["rpassword"].value === "") {
+        showError("f5", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["password"].value.length < 6) {
+        showError("f4", "POOR (Password should be at least 6 characters)");
+        errors = true;
+      }
+      if (document.forms["myform"]["password"].value !== document.forms["myform"]["rpassword"].value) {
+        showError("f5", "Mismatch (Passwords do not match)");
+        errors = true;
+      }
+      if (!document.forms["myform"]["gender"].value) {
+        showError("f6", "Please select a gender");
+        errors = true;
+      }
+      if (document.forms["myform"]["age"].value === "") {
+        showError("f7", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["phone"].value === "") {
+        showError("f8", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["address"].value === "") {
+        showError("f9", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["state"].value === "") {
+        showError("f10", "Field is required");
+        errors = true;
+      }
+      if (document.forms["myform"]["country"].value === "Choose your country") {
+        showError("f11", "Please select a country");
+        errors = true;
+      }
+      if (!document.forms["myform"]["terms"].checked) {
+        showError("f12", "Please accept the terms");
+        errors = true;
+      }
+
+      if (errors) {
+        return false;
+      }
+      return true;
+    }
+
+    function showError(elementId, errorMessage) {
+      const element = document.getElementById(elementId);
+      element.innerHTML = errorMessage;
+      element.style.color = "red";
+    }
+
+    function checkPasswordStrength() {
+      const passwordInput = document.getElementById("password");
+      const passwordValue = passwordInput.value;
+      if (passwordValue.length < 6) {
+        showError("f4", "POOR (Password should be at least 6 characters)");
+      } else {
+        document.getElementById("f4").innerHTML = "";
+      }
+    }
+
+    function checkPasswordMatch() {
+      const passwordInput = document.getElementById("password");
+      const rpasswordInput = document.getElementById("rpassword");
+      const passwordValue = passwordInput.value;
+      const rpasswordValue = rpasswordInput.value;
+
+      if (passwordValue !== rpasswordValue) {
+        showError("f5", "Mismatch (Passwords do not match)");
+      } else {
+        document.getElementById("f5").innerHTML = "";
+      }
+    }
+  </script>
+</

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Task-7</title>
+  <style>
+    body {
+      background: rgb(243, 242, 242);
+    }
+    h1 {
+      text-align: center;
+      color: rgb(2, 2, 109);
+    }
+    img {
+      padding-top: 100px;
+      animation: move 4s linear infinite;
+      animation-play-state: paused;
+      height: 200px;
+    }
+    @keyframes move {
+      0% {
+        padding-left: 0;
+      }
+      100% {
+        padding-left: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img id="train" src="https://www.javatpoint.com/oprweb/train1.png" alt="train">
+  <h1>Click the following buttons to handle animation</h1>
+  <div style="text-align: center;">
+    <button onclick="document.getElementById('train').style.animationPlayState = 'running'">Start</button>
+    <button onclick="document.getElementById('train').style.animationPlayState = 'paused'">Stop</button>
+  </div>
+</body>
+</html>

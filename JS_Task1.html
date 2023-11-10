@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Box Example</title>
+</head>
+<body>
+    <div class="container">
+    <label for="myInput">Enter a number:</label>
+    <input type="text" id="myInput" placeholder="Enter a number">
+    <button onclick="reverseNumber()">Reverse</button>
+    <br>
+
+    <p>Reversed Number: <span id="output"></span></p>
+</div>
+    <script>
+        function reverseNumber() {
+            const inputElement = document.getElementById("myInput");
+            const inputValue = inputElement.value;
+            const inputNumber = parseInt(inputValue, 10);
+
+            if (!isNaN(inputNumber)) {
+                const reversedNumber = reverse(inputNumber);
+                const outputElement = document.getElementById("output");
+                outputElement.textContent = reversedNumber;
+            } else {
+                alert("Please enter a valid number.");
+            }
+        }
+
+        function reverse(x) {
+            const numString = x.toString();
+            const reversedString = numString.split('').reverse().join('');
+            return parseInt(reversedString, 10);
+        }
+    </script>
+</body>
+</html>

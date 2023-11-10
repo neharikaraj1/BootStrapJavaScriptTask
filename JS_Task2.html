@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alphabetical Sort</title>
+  <style>
+    body{
+      margin: 20px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <label for="inputText">Input text:</label>
+  <input type="text" id="inputText" />
+  <br /><br />
+  
+  <button onclick="sortAlphabetically()">Sort Alphabetically</button>
+  <br /><br />
+  
+  <p>Alphabetical Output:</p>
+  <p id="output"></p>
+
+  <script>
+    function sortAlphabetically() {
+      const inputText = document.getElementById('inputText').value;
+      const sortedString = sortStringAlphabetically(inputText);
+
+      document.getElementById('output').innerText = sortedString;
+    }
+
+    function sortStringAlphabetically(inputString) {
+      return inputString.split('').sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())).join('');
+    }
+  </script>
+</body>
+</html>

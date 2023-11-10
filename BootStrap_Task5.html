@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Bootstrap Form</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      height: 100vh;
+      padding: 10px;
+    }
+
+    .form-container {
+      background-color: lightgray;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      width: max-content;
+      padding: 20px;
+    }
+
+    .input-group-text {
+      font-size: 0.8rem;
+    }
+    td{
+      text-align: center;
+      font-weight:500;
+    }
+
+    .center-button {
+      text-align: center;
+    }
+
+    .send-button {
+      margin-top: 20px;
+      background: linear-gradient(to bottom, rgb(223, 116, 9), #ffc107);
+      font-weight: lighter;
+      color:white; 
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .send-icon {
+      margin-left: 5px;
+    }
+
+    .warning-text {
+      color: red;
+      font-size: 0.8rem;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="center-div">
+  <div class="form-container">
+    <form>
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="firstName">First Name</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+              </div>
+              <div class="warning-text" id="firstNameWarning">Please enter your first name</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="lastName">Last Name</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+              </div>
+              <div class="warning-text" id="lastNameWarning">Please enter your last name</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Email</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="warning-text" id="emailWarning">Please enter your email</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="phone">Phone #</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                </div>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+              </div>
+              <div class="warning-text" id="phoneWarning">Please enter your phone number</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="address">Address</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-home"></i></span>
+                </div>
+                <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+              </div>
+              <div class="warning-text" id="addressWarning">Please enter your address</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="city">City</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-city"></i></span>
+                </div>
+                <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+              </div>
+              <div class="warning-text" id="cityWarning">Please enter your city</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="state">State</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                </div>
+                <select id="state" class="form-control" required>
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                </select>
+              </div>
+              <div class="warning-text" id="stateWarning">Please select your state</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="hosting">Do you have hosting?</label></td>
+            <td>
+              <div class="input-group">
+                <ul class="list-unstyled">
+                  <li>
+                    <input type="radio" id="yes" name="hosting" value="Yes" required>
+                    <label for="yes">Yes</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="no" name="hosting" value="No" required>
+                    <label for="no">No</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="warning-text" id="hostingWarning">Please select whether you have hosting</div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="projectDesc">Project Description</label></td>
+            <td>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
+                </div>
+                <textarea class="form-control" id="projectDesc" rows="4" placeholder="Enter your project description" required></textarea>
+              </div>
+              <div class="warning-text" id="projectDescWarning">Please enter your project description</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="center-button">
+              <button type="submit" class="btn btn-warning send-button">Send<i class="fas fa-envelope send-icon"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+
+  document.getElementById("firstName").addEventListener("input", function() {
+    showHideWarning("firstName", "firstNameWarning");
+  });
+
+  document.getElementById("lastName").addEventListener("input", function() {
+    showHideWarning("lastName", "lastNameWarning");
+  });
+
+  document.getElementById("email").addEventListener("input", function() {
+    showHideWarning("email", "emailWarning");
+  });
+
+  document.getElementById("phone").addEventListener("input", function() {
+    showHideWarning("phone", "phoneWarning");
+  });
+
+  document.getElementById("address").addEventListener("input", function() {
+    showHideWarning("address", "addressWarning");
+  });
+
+  document.getElementById("city").addEventListener("input", function() {
+    showHideWarning("city", "cityWarning");
+  });
+
+  document.getElementById("state").addEventListener("change", function() {
+    showHideWarning("state", "stateWarning");
+  });
+
+  document.querySelectorAll('input[name="hosting"]').forEach(function(radio) {
+    radio.addEventListener("change", function() {
+      showHideWarning("hosting", "hostingWarning");
+    });
+  });
+
+  document.getElementById("projectDesc").addEventListener("input", function() {
+    showHideWarning("projectDesc", "projectDescWarning");
+  });
+
+  function showHideWarning(inputId, warningId) {
+    var input = document.getElementById(inputId);
+    var warning = document.getElementById(warningId);
+
+    if (input.validity.valueMissing) {
+      warning.style.display = "block";
+    } else {
+      warning.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

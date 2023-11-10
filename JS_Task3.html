@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiply and Divide</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator-box {
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-box">
+    <form class="two">
+      <label for="one">1st Number:</label>
+      <input type="tel" id="num1"><br>
+      <label for="two">2nd Number:</label>
+      <input type="tel" id="num2"><br>
+      <button type="button" onclick="performOperation('multiply')">Multiply</button>
+      <button type="button" onclick="performOperation('divide')">Divide</button>
+      <p>The result is <span id="output"></span></p>
+    </form>
+  </div>
+
+  <script>
+    function performOperation(operation) {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const outputElement = document.getElementById("output");
+
+      if (!isNaN(num1) && !isNaN(num2)) {
+        if (operation === 'multiply') {
+          outputElement.textContent = num1 * num2;
+        } else if (operation === 'divide' && num2 !== 0) {
+          outputElement.textContent = num1 / num2;
+        } else {
+          outputElement.textContent = "Cannot divide by zero";
+        }
+      } else {
+        outputElement.textContent = "Please enter valid numbers";
+      }
+    }
+  </script>
+</body>
+</html>
